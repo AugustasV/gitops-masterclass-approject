@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bgd
+  namespace: argocd
+spec:
+  project: scoped
+  source:
+    path: app/overlays/default/
+    repoURL: https://github.com/christianh814/bgd
+    targetRevision: main
+  destination:
+    namespace: bgd
+    name: managed
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

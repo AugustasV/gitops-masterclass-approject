@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: global-prod
+  namespace: argocd
+spec:
+  destinations:
+  - namespace: '!kube-system'
+    server: '*'

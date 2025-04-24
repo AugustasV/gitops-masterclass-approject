@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: scoped
+  namespace: argocd
+spec:
+  permitOnlyProjectScopedClusters: true # restrict apps in this cluster to only clusters scoped to this project.
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - name: in-cluster
+    namespace: '*'
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/christianh814/bgd

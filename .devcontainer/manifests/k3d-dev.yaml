@@ -1,0 +1,23 @@
+# https://k3d.io/v5.4.1/usage/configfile/#all-options-example
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: dev
+servers: 1
+image: rancher/k3s:v1.32.3-k3s1
+ports:
+  - port: 30272:30272
+    nodeFilters:
+      - server:*
+options:
+  k3d:
+    wait: true
+    timeout: "60s"
+  k3s:
+    extraArgs:
+      - arg: --tls-san=127.0.0.1
+        nodeFilters:
+          - server:*
+  kubeconfig:
+    updateDefaultKubeconfig: true
+    switchCurrentContext: true
