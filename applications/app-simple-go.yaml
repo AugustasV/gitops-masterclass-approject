@@ -9,7 +9,7 @@ spec:
     namespace: goapps
   source:
     path: deploy/overlays/default
-    repoURL: https://github.com/christianh814/simple-go
+    repoURL: https://github.com/AugustasV/gitops-masterclass-approject
     targetRevision: main
   project: workloads
   syncPolicy:

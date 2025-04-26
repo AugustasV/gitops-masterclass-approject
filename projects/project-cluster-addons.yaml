@@ -11,5 +11,6 @@ spec:
   - name: in-cluster
     namespace: '*'
     server: https://kubernetes.default.svc
+    #  in the future this should be gone
   sourceRepos:
   - https://github.com/AugustasV/gitops-masterclass-approject

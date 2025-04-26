@@ -7,3 +7,4 @@ spec:
   destinations:
   - namespace: '!kube-system'
     server: '*'
+# restricting namespaces so even admins couldn't deploy to kube-config

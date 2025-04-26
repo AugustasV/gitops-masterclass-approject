@@ -12,7 +12,7 @@ spec:
     targetRevision: main
   destination:
     namespace: bgd
-    name: managed
+    name: k3d-managed
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

@@ -12,12 +12,12 @@ spec:
     namespace: '*'
     server: https://kubernetes.default.svc
   sourceRepos:
-  - https://github.com/christianh814/simple-go
+  - https://github.com/AugustasV/gitops-masterclass-approject
   roles:
   - name: custom-project-role
-    description: The "custom-project-role" will be applied to "christian"
+    description: The "custom-project-role" will be applied to "augustas"
     groups:
-    - christian
+    - augustas
     policies:
     - p, proj:workloads:custom-project-role, projects, get, workloads, allow
     - p, proj:workloads:custom-project-role, applications, *, workloads/*, allow
